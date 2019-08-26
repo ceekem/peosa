@@ -10,7 +10,6 @@ import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as _ from "lodash";
 import { load } from '@angular/core/src/render3/instructions';
-import { keyframes } from '@angular/animations';
 
 
 
@@ -63,28 +62,28 @@ export class SmartTableComponent {
       confirmDelete: true,
     },
     columns: {
-      idNo: {
+      idNumber: {
+        title: 'Full Name',
+        type: 'string',
+      },
+      firstName: {
         title: 'ID Number',
-        type: 'string',
-      },
-      name: {
-        title: 'name',
-        type: 'string',
-      },
-      PCD_cell_phone: {
-        title: 'Phone Number',
         type: 'number',
       },
-      DOB: {
-        title: 'Date of Birth',
+      lastName: {
+        title: 'Phone Number',
         type: 'string',
       },
-      PCD_email: {
+      Occupation: {
+        title: 'Occupation',
+        type: 'string',
+      },
+      email: {
         title: 'E-mail',
         type: 'string',
       },
-      gender: {
-        title: 'gender',
+      age: {
+        title: 'Age',
         type: 'number',
       },
     },
@@ -136,7 +135,6 @@ export class SmartTableComponent {
     eff_date: any;
 
 
-    data: any;
 
 
 
@@ -159,9 +157,6 @@ export class SmartTableComponent {
         x["$key"] = element.key;
        this.users.push(x as User);
        this.source.load(this.users);
-        this.data = this.users;
-       console.log('source: ',this.data)
-        console.log('source2: ', this.source)
       });
     });
 
@@ -189,7 +184,7 @@ export class SmartTableComponent {
     },
     ()=>{
       //upload Success
-
+      debugger;
        uploadTask.snapshot.ref.getDownloadURL().then(url =>{
         upload.url = url;
 
@@ -254,7 +249,7 @@ uploadSingle(){
   this.pushUpload(this.currentUpload);
 
 
-    // this.currentUpload = undefined;
+    this.currentUpload = undefined;
 
 }
 
@@ -311,14 +306,6 @@ uploadMulti(){
       title: this.title,
       gender: this.gender,
       language: this.language,
-
-        PCD_tel_phone: this.tel_phone,
-        PCD_cell_phone: this.cell_phone,
-        PCD_address: this.address,
-        PCD_city: this.city,
-        PCD_code: this.code,
-        PCD_email: this.email,
-
       personal_CD: {
         tel_phone: this.tel_phone,
         cell_phone: this.cell_phone,
@@ -327,17 +314,6 @@ uploadMulti(){
         code: this.code,
         email: this.email
       },
-
-
-          ED_em_number: this.em_number,
-          ED_position: this.position,
-          ED_employer_name: this.employer_name,
-          ED_work_place: this.work_place,
-          ED_employer_address: this.employer_address,
-          ED_province: this.province,
-          ED_code: this.code2,
-          ED_tel_phone_em: this.tel_phone_em,
-          ED_fax_phone_em: this.fax_phone_em,
 
       employment_D: {
         em_number: this.em_number,
@@ -350,13 +326,6 @@ uploadMulti(){
         tel_phone_em: this.tel_phone_em,
         fax_phone_em: this.fax_phone_em
       },
-
-
-          DO_bank: this.bank,
-          DO_acc_no: this.acc_no,
-          DO_branch: this.branch,
-          DO_acc_type: this.acc_type,
-          DO_eff_date: this.eff_date,
 
       debit_Order:{
         bank: this.bank,
