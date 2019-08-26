@@ -33,6 +33,8 @@ export interface Cases { caseLogged: string,
   templateUrl: './viewcases.component.html',
   styleUrls: ['./viewcases.component.scss']
 })
+
+
 export class ViewcasesComponent implements OnInit {
   themeName = 'default';
   closeResult: string;
@@ -50,7 +52,19 @@ export class ViewcasesComponent implements OnInit {
    public agents: any[];
 
 
-
+   name = 'Angular';
+   public objects;
+   Category="";
+   myBusinessList=[{
+     id:1,
+     name:'item 1'
+   },{
+     id:2,
+     name:'item 2'
+   },{
+     id:2,
+     name:'item 3'
+   }]
 
    settings = {
 
@@ -72,63 +86,58 @@ export class ViewcasesComponent implements OnInit {
       confirmDelete: true,
     },
     columns: {
-      employeeRepresentative: {
+      caseLoggedBy: {
         title: 'Name',
         type: 'string',
         width: '150px',
         editable: false,
       },
-      caseType: {
-        title: 'Case Type',
+      nature: {
+        title: 'Nature of Case',
         type: 'string',
         editable: false,
       },
-      externalCaseNum: {
-        title: ' Case Number',
+      discription: {
+        title: ' Case Discription',
         type: 'string',
         editable: false,
       },
-      misconductNumber: {
-        title: 'Misconduct Number',
+      caseLogged: {
+        title: 'Date',
         type: 'string',
         editable: false,
       },
-      withness: {
-        title: 'withness',
-        type: 'string',
-        editable: false,
+       caseAssignedTo: {
+        title: 'assigned to',
+        type: 'html',
+        editor:{
+          type: 'list',
+          config: {
+            list: [
+            {  value: '--', title: '--'},
+            {  value: 'Alabama Shakes', title: 'Alabama Shakes'},
+            { value: 'Daft Punk', title: 'Daft Punk'},
+            { value: 'John Doe', title: 'John Doe'},
+            { value: 'Mary Ann', title: 'Mary Ann'},
+            { value: 'Cory Blue', title: 'Cory blue'}]
+          }
+        },
+        width: '120px',
       },
-      //  caseAssignedTo: {
-      //   title: 'assigned to',
-      //   type: 'html',
-      //   editor:{
-      //     type: 'list',
-      //     config: {
-      //       list: [
-      //       {  value: '--', title: '--'},
-      //       {  value: 'Alabama Shakes', title: 'Alabama Shakes'},
-      //       { value: 'Daft Punk', title: 'Daft Punk'},
-      //       { value: 'John Doe', title: 'John Doe'},
-      //       { value: 'Mary Ann', title: 'Mary Ann'},
-      //       { value: 'Cory Blue', title: 'Cory blue'}]
-      //     }
-      //   },
-      //   width: '120px',
-      // },
-    //  caseStatus: {
-    //     title: 'Status',
-    //     type: 'html',
-    //     editor:{
-    //       type: 'list',
-    //       config: {
-    //         list: [
-    //         {  value: 'Open', title: 'Open'},
-    //         {  value: 'Assigned', title: 'Assigned'},
-    //         { value: 'Closed', title: 'Closed'},
-    //         ]
-    //       }
-    //     },
-    //   },
+     caseStatus: {
+        title: 'Status',
+        type: 'html',
+        editor:{
+          type: 'list',
+          config: {
+            list: [
+            {  value: 'Open', title: 'Open'},
+            {  value: 'Assigned', title: 'Assigned'},
+            { value: 'Closed', title: 'Closed'},
+            ]
+          }
+        },
+      },
     },
   };
 
@@ -153,8 +162,8 @@ export class ViewcasesComponent implements OnInit {
   Wi: any;
   CD4: any;
   Sum: any
-  caseType: any = "Select Case Type";
-  caseStatus: any = "Select Case Status";
+  caseType: any;
+  caseStatus: any;
 
   //Future State
 
@@ -197,7 +206,7 @@ export class ViewcasesComponent implements OnInit {
       this.initc.init(theme.variables);
     });
 
-    this.cases3 = db.list('/complaints/currentState');
+    this.cases3 = db.list('/adminCase/');
 
 
 
@@ -291,7 +300,7 @@ currentSave(): any{
     //   "Wi", this.Wi,
     //   "Sum", this.Sum
     // )
-  firebase.database().ref('complaints/currentState').push({
+  firebase.database().ref('cases/currentState').push({
     externalCaseNum: this.ECN,
     misconductNumber: this.MN,
     caseType: this.caseType,
@@ -337,7 +346,7 @@ futureSave(): any{
   //   "Wi", this.Wi,
   //   "Sum", this.Sum
   // )
-firebase.database().ref('complaints/futureState').push({
+firebase.database().ref('cases/futureState').push({
     externalCaseNum: this.ECN1,
     referenceNum: this.rn,
     managedBy: this.mb,
