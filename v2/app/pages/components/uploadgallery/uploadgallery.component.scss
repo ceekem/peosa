@@ -1,0 +1,209 @@
+@import '../../../@theme/styles/themes';
+@import '~@nebular/theme/styles/global/bootstrap/buttons';
+
+@include nb-install-component() {
+
+  nb-card-body {
+    padding-bottom: 0;
+  }
+
+  .row{
+    justify-content: center !important;
+  }
+
+
+ /*  .none {
+    position: relative;
+    transform: rotate(45deg);
+
+    &::before, &::after {
+      position: absolute;
+      content: '';
+      background: nb-theme(form-control-border-color);
+    }
+
+    &::before {
+      left: 50%;
+      top: 10%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 80%;
+    }
+
+    &::after {
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      height: 1px;
+      width: 80%;
+    }
+  }
+
+  .shadow {
+    box-shadow: nb-theme(btn-hero-shadow);
+  }
+
+  .primary-container {
+    .color {
+      background-color: nb-theme(color-primary);
+    }
+    .gradient {
+      @include btn-hero-primary-gradient();
+    }
+    .glow {
+      box-shadow: btn-hero-primary-glow();
+    }
+    .bevel {
+      box-shadow: btn-hero-primary-bevel();
+    }
+  }
+
+  .warning-container {
+    .color {
+      background-color: nb-theme(color-warning);
+    }
+    .gradient {
+      @include btn-hero-warning-gradient();
+    }
+    .glow {
+      box-shadow: btn-hero-warning-glow();
+    }
+    .bevel {
+      box-shadow: btn-hero-warning-bevel();
+    }
+  }
+
+  .success-container {
+    .color {
+      background-color: nb-theme(color-success);
+    }
+    .gradient {
+      @include btn-hero-success-gradient();
+    }
+    .glow {
+      box-shadow: btn-hero-success-glow();
+    }
+    .bevel {
+      box-shadow: btn-hero-success-bevel();
+    }
+  }
+
+  .info-container {
+    .color {
+      background-color: nb-theme(color-info);
+    }
+    .gradient {
+      @include btn-hero-info-gradient();
+    }
+    .glow {
+      box-shadow: btn-hero-info-glow();
+    }
+    .bevel {
+      box-shadow: btn-hero-info-bevel();
+    }
+  }
+
+  .danger-container {
+    .color {
+      background-color: nb-theme(color-danger);
+    }
+    .gradient {
+      @include btn-hero-danger-gradient();
+    }
+    .glow {
+      box-shadow: btn-hero-danger-glow();
+    }
+    .bevel {
+      box-shadow: btn-hero-danger-bevel();
+    }
+  }
+
+  .secondary-container {
+    .color {
+      background-color: nb-theme(btn-secondary-bg);
+    }
+    .border {
+      color: nb-theme(btn-secondary-color);
+      border: nb-theme(btn-secondary-border-width) solid nb-theme(btn-secondary-border);
+    }
+    .glow {
+      box-shadow: btn-hero-secondary-glow();
+    }
+    .bevel {
+      box-shadow: btn-hero-secondary-bevel();
+    }
+  }
+
+  .example-container {
+    margin-bottom: 1.5rem;
+  }
+
+ */
+
+  .dropzone { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    font-weight: 200;
+    height: 300px;
+    border: 2px dashed #f16624;
+    border-radius: 5px;
+    background: white;
+    margin: 10px 0;
+
+    &.hovering {
+        border: 2px solid #f16624;
+        color: #dadada !important;
+    }
+
+    .file-label {
+        font-size: 1.2em;
+    }
+}
+
+progress::-webkit-progress-value {
+    transition: width 0.1s ease;
+}
+
+img {
+    width: 250px
+}
+
+.btn{
+    margin: 2px;
+    width: 82px;
+    font-size: 10px;
+    height: 35px;
+}
+
+.btn-4 {
+  background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+}
+
+.bttn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.bttn{
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+
+ text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 20px #eee;
+  border-radius: 5px;
+  text-transform: lowercase;
+  display: block;
+  width: 172px;
+  height: 35px;
+  color: darkslategrey;
+  font-weight: bold;
+  font-size: 12px;
+  outline: none;
+
+}
+
+
+
+}
