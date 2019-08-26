@@ -8,13 +8,13 @@ export class SmartTableService {
   public usersList:  AngularFireList<User>;
 
   constructor(private firelist: AngularFireDatabase){
-    this.usersList = firelist.list('/users'); 
+    this.usersList = firelist.list('/members');
   }
 
 
 
   getUserss(): AngularFireList<User>{
     return this.usersList;
-  
+
    }
 }
