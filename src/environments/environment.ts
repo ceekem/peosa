@@ -12,16 +12,6 @@ export const environment = {
   production: false,
    firebase : {
 
-
-
-    apiKey: "AIzaSyAuCC1f_uxNX0327uV9brOo_mgpVPxFLwk",
-    authDomain: "peos-e8198.firebaseapp.com",
-    databaseURL: "https://peos-e8198.firebaseio.com",
-    projectId: "peos-e8198",
-    storageBucket: "peos-e8198.appspot.com",
-    messagingSenderId: "676649382275",
-    appId: "1:676649382275:web:c4392be1b8c1e66b"
-
     // apiKey: "AIzaSyCYy6USEJhKn7NeZ8ul0lf7dnHuuWbA0-Q",
     // authDomain: "sapu-9bb45.firebaseapp.com",
     // databaseURL: "https://sapu-9bb45.firebaseio.com",
@@ -36,6 +26,18 @@ export const environment = {
     // projectId: "union-app-1e5d4",
     // storageBucket: "union-app-1e5d4.appspot.com",
     // messagingSenderId: "1002091266198"
+
+
+    apiKey: "AIzaSyAuCC1f_uxNX0327uV9brOo_mgpVPxFLwk",
+    authDomain: "peos-e8198.firebaseapp.com",
+    databaseURL: "https://peos-e8198.firebaseio.com",
+    projectId: "peos-e8198",
+    storageBucket: "peos-e8198.appspot.com",
+    messagingSenderId: "676649382275",
+    appId: "1:676649382275:web:6b2e998586641418"
+
+
+
 
     // apiKey: "AIzaSyBXzytzg1agxXQmH9nu-JXrVjTvBPrJJKE",
     // authDomain: "union-3013e.firebaseapp.com",

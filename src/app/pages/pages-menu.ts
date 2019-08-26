@@ -112,12 +112,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
       // {
       //   title: 'View Report',
       //   link: '/pages/charts/chartjs',
-      // }
+      // },
       // {
       //   title: 'D3',
       //   link: '/pages/charts/d3',
       // },
-  //  ],
+   // ],
   },
   // {
   //   title: 'Ballots',

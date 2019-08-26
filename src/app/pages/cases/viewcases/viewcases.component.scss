@@ -140,15 +140,7 @@
 //==================================================
 //  cases css
 //==================================================
-.curr{
-  font-size: 8px;
-  float: right;
-  padding:10px;
-  width: 100px;
-  margin-right: 10px;
-  
-  
-}
+
 
 
 @include nb-install-component() {
@@ -163,8 +155,6 @@
     overflow-y: auto;
     padding: 0;
   }
-
-  
 
   .contact {
     display: flex;
