@@ -1,0 +1,73 @@
+<nb-card>
+    <nb-card-header>News</nb-card-header>
+    <nb-card-body >
+      <div class="row">
+
+
+       <div class="col-md-4 col-sm-12 col-xl-4 wd" *ngFor="let news of newsList">
+        
+        
+        <nb-card class="nb" id="cad" size="medium" >
+          
+          <nb-card-body>
+            <!-- <i class="rem-icon fa fa-edit" id="edi" style="float:right;" ></i> -->
+           
+                <img class="picture imgs" src="{{ news?.imageURL}}" alt="">
+          
+        
+                <div class="details">
+                  <div class="title">
+                    {{news?.headline}}
+                  </div>
+                  <div class="description">
+                    {{news?.newstext}}
+                    <!-- React Native UI Kitten is a framework that contains a set of commonly used UI components styled in a similar way. The most awesome thing: you can change themes on the fly by just passing a different set of variables. 100% native. Give our kitten a try! -->
+                  </div>
+                  
+                </div>
+        
+        
+          </nb-card-body>
+        
+            
+        
+          <nb-card-footer>
+            
+            <div class="row">
+              <div class="col">
+                  <!-- <button type="button" (click)="maximize(news)" class="btn btn-sm btn-info" id="max" data-toggle="modal" data-target="#product-dtl">Maximize</button> -->
+            <button type="button" class="btn btn-sm btn-info" (click)="maximize(news)" data-toggle="modal" data-target="#product-dtl" style="float: left;">Maximize</button>
+              </div>
+              <div class="col tra">
+                 
+                        <i title="edit" class="rem-icon fa fa-edit" id="edi" aria-hidden="true"  (click)="edit(news)" ></i>
+                   
+                    
+                        <i title="delete" class="rem-icon fa fa-trash" id="tra" aria-hidden="true" (click)="onDeleteClick(news)" data-toggle="modal" data-target="#notification-delete-confirm" style="float: right;"></i>        
+                   
+                   
+                </div>
+            </div>
+
+
+          </nb-card-footer> 
+          
+        </nb-card>
+       
+        
+     
+ 
+
+
+
+
+
+
+
+<ngx-notification (delEvent)="deleteItem()" (savEvent)="saveItem()"></ngx-notification>
+
+
+      </div>
+      </div>
+    </nb-card-body>
+  </nb-card>

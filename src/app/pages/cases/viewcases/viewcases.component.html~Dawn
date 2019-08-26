@@ -1,0 +1,565 @@
+<nb-card>
+    <nb-card-header>
+        Cases
+        <button class="btn curr btn-outline-primary" (click)="open(content)"> Add Current State Case</button>
+        <button  class="btn curr  btn-outline-primary" (click)="open1(future)">Add Future State Case</button>
+    </nb-card-header>
+    <nb-card-body>
+      <div class="row">
+
+        <ng-template #content let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">New Current State Case</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                  <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="input-group-text" for="mn">External Case Number</label>
+                                <input type="text" name="ecn" id="ecN"
+                                [(ngModel)] = "ECN"
+                                class="form-control"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                                <label class="input-group-text" for="mn">Misconduct Number</label>
+                            <div class="form-group">
+                                <input type="text" name="mn" id="mN"
+                                [(ngModel)] = "MN"
+                                class="form-control"
+                                
+                                >
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                    <label class="input-group-text" for="mn">Case Type</label>
+                                <select  [(ngModel)]="caseType" name="options" class="form-control" placeholder="Select Cast Type">
+                                        
+                                    <option value="Bargaining Council">Bargaining Council</option>
+                                    <option value="CCMA">CCMA</option>
+                                    <option value="Departmental">Departmental</option>
+                                    <option value="High Court">High Court</option>
+                                    <option value="Internal Workplace">Internal Workplace</option>
+                                    <option value="Labour Court">Labour Court</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                    <label class="input-group-text" for="mn">Case Status</label>
+                                <select  [(ngModel)]="caseType" name="options" class="form-control" placeholder="Select Cast Status">
+                                        <option  value="" disabled selected hidden>Select Case Status</option>
+                                        <option value="Appeal" selected>Appeal</option>
+                                        <option value="Lost">Lost</option>
+                                        <option value="Pending">Pending</option>
+                                        <option value="Registered">Registered</option>
+                                        <option value="Successful">Successful</option>
+                                        <option value="Excluded">Excluded</option>
+                                        <option value="Closed">Closed</option>
+                                </select>
+                            </div>
+                        </div>
+
+                  </div>
+
+                  <hr>
+               
+                  <div class="col-md-12" style="margin: 10px; text-align: center"><b>Employee Representative</b></div>
+                  <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="input-group-text" for="mn">Name</label>
+                                    <input type="text" name="ER1" id="mN"
+                                    [(ngModel)] = "ER1"
+                                    class="form-control"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="input-group-text" for="mn">Contact Details</label>
+                                        <textarea name="message" [(ngModel)]="CD1" class="form-control">
+
+                                        </textarea>
+                                    </div>
+                            </div>
+                  </div>
+
+                  
+                 
+                  <hr>
+                  
+                  
+
+                  
+                  <div class="col-md-12" style="margin: 10px; text-align: center"><b>Presiding Officer</b></div>
+                  <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="input-group-text" for="mn">Name</label>
+                                    <input type="text" name="PO" id="mN"
+                                    [(ngModel)] = "PO"
+                                    class="form-control"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="input-group-text" for="mn">Contact Details</label>
+                                        <textarea name="message" [(ngModel)]="CD2" class="form-control">
+
+                                        </textarea>
+                                    </div>
+                            </div>
+                      
+                    </div>
+
+                    <hr>
+
+                  
+                  <div class="col-md-12" style="margin: 10px; text-align: center"><b>Employer Representative</b></div>
+                  <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="input-group-text" for="mn">Name</label>
+                                    <input type="text" name="ER2" id="mN"
+                                    [(ngModel)] = "ER2"
+                                    class="form-control"
+                                    >
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="input-group-text" for="mn">Contact Details</label>
+                                        <textarea name="message" [(ngModel)]="CD3" class="form-control">
+
+                                        </textarea>
+                                    </div>
+                            </div>
+
+                  </div>
+
+                  <hr>
+                  
+
+                 
+                  <div class="col-md-12" style="margin: 10px; text-align: center"><b>Witness</b></div>
+
+                  <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="input-group-text" for="mn">Name</label>
+                                    <input type="text" name="Wi" id="mN"
+                                    [(ngModel)]="Wi"
+                                    class="form-control"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="input-group-text" for="mn">Contact Details</label>
+                                        <textarea name="message" [(ngModel)]="CD4" class="form-control">
+
+                                        </textarea>
+                                    </div>
+                            </div>
+
+                  </div>
+
+
+                  
+                  <hr>
+
+                  
+                  <div class="col-md-12" style="margin: 10px; text-align: center"><b>Summary</b></div>
+
+                  <div class="row">
+
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="input-group-text" for="mn">Description</label>
+                                    <textarea name="message" [(ngModel)]="Sum" class="form-control">
+
+                                    </textarea>
+                                </div>
+                        </div>
+
+                  </div>
+
+
+                  
+              </form>
+            </div>
+            <div class="modal-footer">
+              <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button> -->
+              <button type="button" class="btn btn-outline-primary" (click)="currentSave()">Save</button>
+            </div>
+          </ng-template>
+
+
+
+
+
+
+            <ng-template #future let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title" id="modal-basic-title1">New Future State Case</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                      <div class="row">
+
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="input-group-text" for="mn">External Case Number</label>
+                                        <input type="text" name="ecn1" id="ecN1"
+                                        [(ngModel)] = "ECN1"
+                                        class="form-control"
+                                        >
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="input-group-text" for="mn">Reference Number</label>
+                                            <input type="text" name="rn" id="rN"
+                                            [(ngModel)] = "rn"
+                                            class="form-control"
+                                            >
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="input-group-text" for="mn">Managed By</label>
+                                                <input type="text" name="mb" id="mB"
+                                                [(ngModel)] = "mb"
+                                                class="form-control"
+                                                >
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                                <div class="form-group">
+                                                        <label class="input-group-text" for="mn">Case Type</label>
+                                                    <select  [(ngModel)]="caseType" name="options" class="form-control" placeholder="Select Cast Type">
+                                                            
+                                                        <option value="Bargaining Council">Bargaining Council</option>
+                                                        <option value="CCMA">CCMA</option>
+                                                        <option value="Departmental">Departmental</option>
+                                                        <option value="High Court">High Court</option>
+                                                        <option value="Internal Workplace">Internal Workplace</option>
+                                                        <option value="Labour Court">Labour Court</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-6">
+                                                    <div class="form-group">
+                                                            <label class="input-group-text" for="mn">Matter Type</label>
+                                                        <select  [(ngModel)]="matterType" name="options" class="form-control" placeholder="Select Cast Type">
+                                                                <option>Select Type Of Matter</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="input-group-text" for="mn">Date</label>
+                                                            <input type="date" name="date" id="mN"
+                                                            [(ngModel)] = "caseDate"
+                                                            class="form-control"
+                                                            >
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                    <label class="input-group-text" for="mn">Case Status</label>
+                                                                <select  [(ngModel)]="caseStatus" name="options" class="form-control" placeholder="Select Cast Type">
+                                                                        <option>Select Case Status</option>
+                                                                        <option value="Appeal">Appeal</option>
+                                                                        <option value="Lost">Lost</option>
+                                                                        <option value="Pending">Pending</option>
+                                                                        <option value="Registered">Registered</option>
+                                                                        <option value="Successful">Successful</option>
+                                                                        <option value="Excluded">Excluded</option>
+                                                                        <option value="Closed">Closed</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                    
+                      </div>
+
+                      
+                      <hr>
+                      
+
+                     
+                      <div class="col-md-12" style="margin: 10px; text-align: center"><b>Parties 1</b></div>
+
+                      <div class="row">
+
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                            <label class="input-group-text" for="mn">Type</label>
+                                        <select  [(ngModel)]="party1" name="options" class="form-control" placeholder="Select Cast Type">
+                                                <option>Select Type Of Party</option>
+                                                <option value="Complaint">Complaint</option>
+                                                <option value="Plaintiff">Plaintiff</option>
+                                                <option value="Applicant">Applicant</option>
+                                                <option value="Appellant">Appellant</option>
+                                                <option value="Employee">Employee</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="input-group-text" for="mn">Name</label>
+                                            <input type="text" name="p1Name" id="mN"
+                                            [(ngModel)] = "p1Name"
+                                            class="form-control"
+                                            >
+                                        </div>
+                                    </div>
+        
+        
+        
+        
+                                    <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="input-group-text" for="mn">Contact Details</label>
+                                                <textarea  name="p1Con" [(ngModel)]="p1Con" class="form-control">
+        
+                                                </textarea>
+                                            </div>
+                                    </div>
+
+                      </div>
+
+                      <hr>
+
+                      
+                      <div class="col-md-12" style="margin: 10px; text-align: center"><b>Employee Representative</b></div>
+
+                      <div class="row">
+
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="input-group-text" for="mn">Name</label>
+                                        <input type="text" name="erName" id="mN"
+                                        [(ngModel)] = "erName"
+                                        class="form-control"
+                                        >
+                                    </div>
+                                </div>
+    
+    
+    
+    
+                                <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="input-group-text" for="mn">Contact Details</label>
+                                            <textarea  name="erCon" [(ngModel)]="erCon"  class="form-control">
+    
+                                            </textarea>
+                                        </div>
+                                </div>
+
+                      </div>
+
+                      <hr>
+
+                      <div class="col-md-12" style="margin: 10px; text-align: center"><b>Presiding Officer</b></div>
+                  <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="input-group-text" for="mn">Name</label>
+                                    <input type="text" name="poName" id="mN"
+                                    [(ngModel)] = "poName"
+                                    class="form-control"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="input-group-text" for="mn">Contact Details</label>
+                                        <textarea name="poCon" [(ngModel)]="poCon" class="form-control">
+
+                                        </textarea>
+                                    </div>
+                            </div>
+                      
+                    </div>
+
+                    <hr>
+
+                    <div class="col-md-12" style="margin: 10px; text-align: center"><b>Parties 2</b></div>
+
+                      <div class="row">
+
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                            <label class="input-group-text" for="mn">Type</label>
+                                        <select  [(ngModel)]="party1" name="options" class="form-control" placeholder="Select Cast Type">
+                                                <option>Select Type Of Party</option>
+                                                <option value="Complaint">Complaint</option>
+                                                <option value="Plaintiff">Plaintiff</option>
+                                                <option value="Applicant">Applicant</option>
+                                                <option value="Appellant">Appellant</option>
+                                                <option value="Employee">Employee</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="input-group-text" for="mn">Name</label>
+                                            <input type="text" name="p1Name" id="mN"
+                                            [(ngModel)] = "p2Name"
+                                            class="form-control"
+                                            >
+                                        </div>
+                                    </div>
+        
+        
+        
+        
+                                    <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="input-group-text" for="mn">Contact Details</label>
+                                                <textarea  name="p2Con" [(ngModel)]="p2Con" class="form-control">
+        
+                                                </textarea>
+                                            </div>
+                                    </div>
+
+                      </div>  
+
+                      <hr>
+
+                      <div class="col-md-12" style="margin: 10px; text-align: center"><b>Witness</b></div>
+
+                  <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="input-group-text" for="mn">Name</label>
+                                    <input type="text" name="wName" id="mN"
+                                    [(ngModel)] = "wName"
+                                    class="form-control"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="input-group-text" for="mn">Contact Details</label>
+                                        <textarea name="wCon" [(ngModel)]="wCon" class="form-control">
+
+                                        </textarea>
+                                    </div>
+                            </div>
+
+                  </div>
+
+
+                  
+                  <hr>
+
+                  
+                  <div class="col-md-12" style="margin: 10px; text-align: center"><b>Summary</b></div>
+
+                  <div class="row">
+
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="input-group-text" for="mn">Description</label>
+                                    <textarea name="desc" [(ngModel)]="desc" class="form-control">
+
+                                    </textarea>
+                                </div>
+                        </div>
+
+                  </div>
+
+
+
+
+
+                  </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" (click)="futureSave()">Save</button>
+                </div>
+              </ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+        <nb-tabset fullWidth>
+          <nb-tab tabTitle="Recent Cases">
+
+             <ng2-smart-table [settings]="settings" [source]="source" (userRowSelect)="casePop()" (deleteConfirm)="onDeleteConfirm($event)">
+            </ng2-smart-table>
+          </nb-tab>
+          <nb-tab tabTitle="All Cases">
+
+              <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
+              </ng2-smart-table>
+
+          </nb-tab>
+        </nb-tabset>
+
+
+
+      </div>
+    </nb-card-body>
+  </nb-card>
